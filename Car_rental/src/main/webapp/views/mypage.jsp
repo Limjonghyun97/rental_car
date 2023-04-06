@@ -12,6 +12,10 @@
 <body>
 <%
 Client client = (Client)session.getAttribute("client");
+
+if(client != null) {
+	response.sendRedirect("clientpage");
+}
 %>
 
 <section>
