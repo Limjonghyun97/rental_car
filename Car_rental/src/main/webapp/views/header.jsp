@@ -9,7 +9,7 @@
 <body>
 <div class="container">
 <header>
-<h1><a href="/">Renter Car</a></h1>
+<h1><a href="/">빌려타다</a></h1>
 </header>
 <nav>
 <ul>

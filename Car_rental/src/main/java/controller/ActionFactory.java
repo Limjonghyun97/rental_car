@@ -3,7 +3,6 @@ package controller;
 import controller.action.JoinAction;
 import controller.action.LoginAction;
 import controller.action.LogoutAction;
-import controller.action.BookingAction;
 
 public class ActionFactory {
 	private ActionFactory() {}
@@ -22,7 +21,7 @@ public class ActionFactory {
 		else if(command.equals("logout"))
 			action = new LogoutAction();
 		else if(command.equals("reservation"))
-			action = new BookingAction();
+			action = null;
 			
 		return action;
 	}

@@ -43,7 +43,6 @@
 			if(client.getId().equals(bookingInfo.getClient_id())){
 		%>
 		<tr>
-			<td><% %></td>
 			<td><%=bookingInfo.getVehicle_id() %></td>
 			<td><%=bookingInfo.getVenue_id() %></td>
 			<td><%=bookingInfo.getDate_time() %></td>

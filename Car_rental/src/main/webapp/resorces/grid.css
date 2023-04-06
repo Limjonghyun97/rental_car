@@ -1,5 +1,5 @@
 @charset "UTF-8";
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
 *{
 	margin:0;
 	padding:0;
@@ -10,6 +10,7 @@ body {
 	display: grid;
 	grid-template-rows: 120px auto 100px;
 	height: 100vh;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .container{
@@ -26,7 +27,34 @@ a {
 	color:black;
 }
 
-/* header + nav */
+/* index */
+
+h1 {
+	font-weight:bold;
+}
+
+.main {
+	display:flex;
+	text-align:center;
+}
+
+.main>a {
+	margin-top:150px;
+}
+
+.main>a:hover{
+	color:royalblue;
+}
+
+.main>a>img {
+	width:60%;
+	border-radius:2%;
+}
+
+.main>a>p {
+	font-size:18px;
+}
+
 nav>ul {
 	display:flex;
 	gap:20px;
@@ -36,7 +64,16 @@ nav>ul>li {
 	 padding-right: 10px;
 }
 
+nav>ul>li>a:hover {
+	color:royalblue;
+}
+
 /* section 전체 틀 */
+h2 {
+	font-size:32px;
+	color:royalblue;
+}
+
 section {
 	margin:0 20px;
 	display:flex;
@@ -59,7 +96,12 @@ section>h2 {
 }
 
 /* section 예약 파트 */
-
+.rs_part>form {
+	margin-top: 80px;
+	display:flex;
+	flex-direction: column;
+	gap:30px;
+}
 
 
 /* footer */
