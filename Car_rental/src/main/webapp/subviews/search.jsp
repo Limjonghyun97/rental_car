@@ -10,6 +10,17 @@
 <jsp:include page="header"/>
 <body>
 <%
+BookingDao bookingDao = BookingDao.getInstance();
+ArrayList<Booking> list = bookingDao.getBookingAll();
+
+VehicleDao vehicleDao = VehicleDao.getInstance();
+ArrayList<Vehicle> list2 = vehicleDao.getVehicleAll();
+
+VenueDao venuDao = VenueDao.getInstance();
+ArrayList<Venue> list3 = venuDao.getVenueAll();
+
+String custname = request.getParameter("custname");
+String phone = request.getParameter("phone");
 
 %>
 <section>

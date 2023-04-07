@@ -1,4 +1,4 @@
-package booking;
+package booking.copy;
 
 public class Booking {
 	private String vehicle_id, client_id, date_time, join_date;
@@ -15,12 +15,7 @@ public class Booking {
 	}
 
 	public Booking(BookingDto bookingDto) {
-		this.vehicle_id = bookingDto.getVehicle_id();
-		this.client_id = bookingDto.getClient_id();
-		this.date_time = bookingDto.getDate_time();
-		this.join_date = bookingDto.getJoin_date();
-		this.venue_id = bookingDto.getVenue_id();
-		this.total_payment = bookingDto.getTotal_payment();
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getVehicle_id() {

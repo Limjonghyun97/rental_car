@@ -3,9 +3,8 @@ package booking;
 public class BookingDto {
 	private String vehicle_id, client_id, date_time, join_date;
 	private int venue_id, hour, total_payment;
-
-	public BookingDto(String vehicle_id, int venue_id, String client_id, String date_time, int hour, int total_payment,
-			String join_date) {
+	
+	public BookingDto(String vehicle_id, int venue_id, String client_id, String date_time, int hour, int total_payment, String join_date) {
 		this.vehicle_id = vehicle_id;
 		this.venue_id = venue_id;
 		this.client_id = client_id;

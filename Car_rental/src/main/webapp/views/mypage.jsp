@@ -1,3 +1,4 @@
+<%@page import="client.controller.ClientDao"%>
 <%@page import="client.Client"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -12,7 +13,6 @@
 <body>
 	<%
 	Client client = (Client) session.getAttribute("client");
-
 	if (client != null) {
 		response.sendRedirect("clientpage");
 	}

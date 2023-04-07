@@ -16,7 +16,7 @@
 	<table>
 		<tr>
 			<td>이름</td>
-			<td><input type="text" name="name" required></td>
+			<td><input type="text" name="name"></td>
 		</tr>
 		<tr>
 			<td>아이디</td>

@@ -1,3 +1,9 @@
+<%@page import="venue.Venue"%>
+<%@page import="venue.controller.VenueDao"%>
+<%@page import="vehicle.controller.VehicleDao"%>
+<%@page import="vehicle.Vehicle"%>
+<%@page import="booking.BookingDto"%>
+<%@page import="client.controller.ClientDao"%>
 <%@page import="booking.Booking"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="booking.controller.BookingDao"%>
@@ -15,8 +21,15 @@
 <body>
 	<%
 	Client client = (Client) session.getAttribute("client");
+		
 	BookingDao bookingDao = BookingDao.getInstance();
 	ArrayList<Booking> list = bookingDao.getBookingAll();
+	
+	VehicleDao vehicleDao = VehicleDao.getInstance();
+	ArrayList<Vehicle> list2 = vehicleDao.getVehicleAll();
+	
+	VenueDao venuDao = VenueDao.getInstance();
+	ArrayList<Venue> list3 = venuDao.getVenueAll();
 	%>
 
 	<section>
@@ -43,11 +56,25 @@
 			if(client.getId().equals(bookingInfo.getClient_id())){
 		%>
 		<tr>
-			<td><%=bookingInfo.getVehicle_id() %></td>
-			<td><%=bookingInfo.getVenue_id() %></td>
-			<td><%=bookingInfo.getDate_time() %></td>
-			<td><%=bookingInfo.getHour() %>시간</td>
-			<td><%=bookingInfo.getTotal_payment() %></td>
+			<%
+			for(Vehicle vehicleInfo : list2) {
+				if(bookingInfo.getVehicle_id().equals(vehicleInfo.getVehicle_id())) {
+			%>
+			<td> <%=vehicleInfo.getName() %> </td>
+			<td> <%=vehicleInfo.getVehicle_id() %> </td>
+			<%}
+				} %>
+				
+			<%
+			for(Venue venueInfo : list3) {
+				if(bookingInfo.getVenue_id() == venueInfo.getVenue_id()){
+			%>
+			<td> <%=venueInfo.getName() %> </td>
+			<%}
+				} %>
+			<td> <%=bookingInfo.getDate_time() %> </td>
+			<td> <%=bookingInfo.getHour() %>시간 </td>
+			<td> <%=bookingInfo.getTotal_payment() %>원 </td>
 		</tr>
 		<%}
 			} %>

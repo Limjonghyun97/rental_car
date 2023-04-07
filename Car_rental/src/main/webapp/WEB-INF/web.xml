@@ -62,6 +62,16 @@
   	</servlet-mapping>
   	
   	<servlet>
+  		<servlet-name>community</servlet-name>
+  		<jsp-file>/views/community.jsp</jsp-file>
+  	</servlet>
+  	
+  	<servlet-mapping>
+  		<servlet-name>community</servlet-name>
+  		<url-pattern>/community</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
   		<servlet-name>mypage</servlet-name>
   		<jsp-file>/views/mypage.jsp</jsp-file>
   	</servlet>
@@ -69,6 +79,16 @@
   	<servlet-mapping>
   		<servlet-name>mypage</servlet-name>
   		<url-pattern>/mypage</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>search</servlet-name>
+  		<jsp-file>/subviews/search.jsp</jsp-file>
+  	</servlet>
+  	
+  	<servlet-mapping>
+  		<servlet-name>search</servlet-name>
+  		<url-pattern>/search</url-pattern>
   	</servlet-mapping>
   	
   	<servlet>

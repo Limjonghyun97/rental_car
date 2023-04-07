@@ -20,8 +20,6 @@ public class ActionFactory {
 			action = new LoginAction();
 		else if(command.equals("logout"))
 			action = new LogoutAction();
-		else if(command.equals("reservation"))
-			action = null;
 			
 		return action;
 	}

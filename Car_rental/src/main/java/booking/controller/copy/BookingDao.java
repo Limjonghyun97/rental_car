@@ -1,4 +1,4 @@
-package vehicle.controller;
+package booking.controller.copy;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,11 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import booking.Booking;
+import booking.BookingDto;
 import util.DBManager;
-import vehicle.Vehicle;
-import vehicle.VehicleDto;
 
-public class VehicleDao {
+public class BookingDao {
 	// 1. DB 연결
 		private Connection conn;
 		// 2. SQL 구문 담을 객체
@@ -18,18 +18,18 @@ public class VehicleDao {
 		// 3. 결과를 담을 객체
 		private ResultSet rs;
 
-		private VehicleDao() {
+		private BookingDao() {
 		}
 
-		private static VehicleDao instance = new VehicleDao();
+		private static BookingDao instance = new BookingDao();
 
-		public static VehicleDao getInstance() {
+		public static BookingDao getInstance() {
 			return instance;
 		}
 
 		// create
-		public void creatVehicle(VehicleDto vehicleDto) {
-			Vehicle vehicle = new Vehicle(vehicleDto);
+		public void creatBooking(BookingDto bookingDto) {
+			Booking booking = new Booking(bookingDto);
 
 			this.conn = DBManager.getConnectionFromMySQL();
 			if (this.conn != null) {
@@ -51,26 +51,28 @@ public class VehicleDao {
 		}
 
 		// Read
-		public ArrayList<Vehicle> getVehicleAll() {
-			ArrayList<Vehicle> list = new ArrayList<Vehicle>();
+		public ArrayList<Booking> getBookingAll() {
+			ArrayList<Booking> list = new ArrayList<Booking>();
 
 			this.conn = DBManager.getConnectionFromMySQL();
 			if (this.conn != null) {
-				String sql = "SELECT * FROM `vehicle`";
+				String sql = "SELECT * FROM `booking`";
 
 				try {
 					this.pstmt = this.conn.prepareStatement(sql);
 					this.rs = this.pstmt.executeQuery();
 
 					while (this.rs.next()) {
-						String name = this.rs.getString(1);
-						String vehicle_id = this.rs.getString(2);
-						int hour_rate = this.rs.getInt(3);
-						int venue_id = this.rs.getInt(4);
-						String joindate = this.rs.getString(5);
+						String vehicle = this.rs.getString(1);
+						int venue_id = this.rs.getInt(2);
+						String client_id = this.rs.getString(3);
+						String date_time = this.rs.getString(4);
+						int hour = this.rs.getInt(5);
+						int total_payment = this.rs.getInt(6);
+						String join_date = this.rs.getString(7);
 
-						Vehicle vehicle = new Vehicle(name, vehicle_id, hour_rate, venue_id, joindate);
-						list.add(vehicle);
+						Booking booking = new Booking(vehicle, venue_id, client_id, date_time, hour, total_payment, join_date);
+						list.add(booking);
 					}
 
 				} catch (SQLException e) {
