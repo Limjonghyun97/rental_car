@@ -3,28 +3,28 @@ package venue;
 
 public class Venue {
 	
-	private int venue_id;
-	private String name, join_date;
+	private int venueId;
+	private String name, joindate;
 
 
-	public Venue(int venue_id, String name, String joindate) {
-		this.venue_id = venue_id;
+	public Venue(int venueId, String name, String joindate) {
+		this.venueId = venueId;
 		this.name = name;
-		this.join_date = joindate;
+		this.joindate = joindate;
 	}
-	public int getVenue_id() {
-		return venue_id;
+	public int getVenueId() {
+		return venueId;
 	}
 	public String getName() {
 		return name;
 	}
-	public String getJoin_date() {
-		return join_date;
+	public String getJoindate() {
+		return joindate;
 	}
 	public Venue(VenueDto venueDto) {
-		this.venue_id = venueDto.getVenue_id();
+		this.venueId = venueDto.getVenueId();
 		this.name = venueDto.getName();
-		this.join_date = venueDto.getJoin_date();
+		this.joindate = venueDto.getJoindate();
 	}
 
 }

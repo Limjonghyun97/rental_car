@@ -1,53 +1,54 @@
 package booking;
 
 public class Booking {
-	private String vehicle_id, client_id, date_time, join_date;
-	private int venue_id, hour, total_payment;
+	private String vehicleId, clientId, dateTime, joindate;
+	private int venueId, hour, totalPayment;
 	
-	public Booking(String vehicle_id, int venue_id, String client_id, String date_time, int hour, int total_payment, String join_date) {
-		this.vehicle_id = vehicle_id;
-		this.venue_id = venue_id;
-		this.client_id = client_id;
-		this.date_time = date_time;
+	public Booking(String vehicleId, int venueId, String clientId, String dateTime, int hour, int totalPayment, String joindate) {
+		this.vehicleId = vehicleId;
+		this.venueId = venueId;
+		this.clientId = clientId;
+		this.dateTime = dateTime;
 		this.hour = hour;
-		this.total_payment = total_payment;
-		this.join_date = join_date;
+		this.totalPayment = totalPayment;
+		this.joindate = joindate;
 	}
 
-	public Booking(BookingDto bookingDto) {
-		this.vehicle_id = bookingDto.getVehicle_id();
-		this.client_id = bookingDto.getClient_id();
-		this.date_time = bookingDto.getDate_time();
-		this.join_date = bookingDto.getJoin_date();
-		this.venue_id = bookingDto.getVenue_id();
-		this.total_payment = bookingDto.getTotal_payment();
+	public String getVehicleId() {
+		return vehicleId;
 	}
 
-	public String getVehicle_id() {
-		return vehicle_id;
+	public String getClientId() {
+		return clientId;
 	}
 
-	public String getClient_id() {
-		return client_id;
+	public String getDateTime() {
+		return dateTime;
 	}
 
-	public String getDate_time() {
-		return date_time;
+	public String getJoindate() {
+		return joindate;
 	}
 
-	public String getJoin_date() {
-		return join_date;
-	}
-
-	public int getVenue_id() {
-		return venue_id;
+	public int getVenueId() {
+		return venueId;
 	}
 
 	public int getHour() {
 		return hour;
 	}
 
-	public int getTotal_payment() {
-		return total_payment;
+	public int getTotalPayment() {
+		return totalPayment;
 	}
+
+	public Booking(BookingDto bookingDto) {
+		this.vehicleId = bookingDto.getVehicleId();
+		this.clientId = bookingDto.getClientId();
+		this.dateTime = bookingDto.getDateTime();
+		this.joindate = bookingDto.getJoindate();
+		this.venueId = bookingDto.getVenueId();
+		this.totalPayment = bookingDto.getTotalPayment();
+	}
+
 }

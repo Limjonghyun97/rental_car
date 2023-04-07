@@ -72,6 +72,16 @@
   	</servlet-mapping>
   	
   	<servlet>
+  		<servlet-name>writePage</servlet-name>
+  		<jsp-file>/subviews/writePage.jsp</jsp-file>
+  	</servlet>
+  	
+  	<servlet-mapping>
+  		<servlet-name>writePage</servlet-name>
+  		<url-pattern>/writePage</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
   		<servlet-name>mypage</servlet-name>
   		<jsp-file>/views/mypage.jsp</jsp-file>
   	</servlet>
@@ -89,6 +99,16 @@
   	<servlet-mapping>
   		<servlet-name>search</servlet-name>
   		<url-pattern>/search</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>write</servlet-name>
+  		<jsp-file>/subviews/write.jsp</jsp-file>
+  	</servlet>
+  	
+  	<servlet-mapping>
+  		<servlet-name>write</servlet-name>
+  		<url-pattern>/write</url-pattern>
   	</servlet-mapping>
   	
   	<servlet>

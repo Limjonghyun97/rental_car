@@ -9,7 +9,7 @@
 body {
 	display: grid;
 	grid-template-rows: 120px auto 100px;
-	height: 100vh;
+	height:90vh;
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -91,7 +91,6 @@ section>h2 {
 
 /* section 파트 */
 .mypage {
-	margin-top: 80px;
 	text-align:center;
 }
 
@@ -103,12 +102,24 @@ section>h2 {
 	gap:30px;
 }
 
+/* section 글쓰기 */
+textarea {
+	resize: none;
+	font-size:20px;
+	font-weight:bold;
+	color:gray;
+}
+
+.community {
+	width:600px;
+	text-align:center;
+}
 
 /* footer */
 footer {
 	background-color:black;
 	margin-top:80px;
-	height:100px;
+	height:118px;
 	color:white;
 	text-align:center;
 }

@@ -64,12 +64,12 @@ public class VehicleDao {
 
 					while (this.rs.next()) {
 						String name = this.rs.getString(1);
-						String vehicle_id = this.rs.getString(2);
-						int hour_rate = this.rs.getInt(3);
-						int venue_id = this.rs.getInt(4);
+						String vehicleId = this.rs.getString(2);
+						int hourRate = this.rs.getInt(3);
+						int venueId = this.rs.getInt(4);
 						String joindate = this.rs.getString(5);
 
-						Vehicle vehicle = new Vehicle(name, vehicle_id, hour_rate, venue_id, joindate);
+						Vehicle vehicle = new Vehicle(name, vehicleId, hourRate, venueId, joindate);
 						list.add(vehicle);
 					}
 
