@@ -1,8 +1,11 @@
 package controller;
 
+import controller.action.CorrectionAction;
+import controller.action.DeleteBoardAction;
 import controller.action.JoinAction;
 import controller.action.LoginAction;
 import controller.action.LogoutAction;
+import controller.action.MoveCorrectionAction;
 import controller.action.WriteAction;
 
 public class ActionFactory {
@@ -23,6 +26,8 @@ public class ActionFactory {
 			action = new LogoutAction();
 		else if(command.equals("write"))
 			action = new WriteAction();
+		else if(command.equals("correction"))
+			action = new CorrectionAction();
 			
 		return action;
 	}

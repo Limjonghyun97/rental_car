@@ -1,3 +1,10 @@
+<%@page import="venue.Venue"%>
+<%@page import="venue.controller.VenueDao"%>
+<%@page import="vehicle.Vehicle"%>
+<%@page import="vehicle.controller.VehicleDao"%>
+<%@page import="booking.Booking"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="booking.controller.BookingDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,7 +14,7 @@
 <title>Renter Car</title>
 <link rel="stylesheet" href="/resorces/grid.css">
 </head>
-<jsp:include page="header"/>
+<jsp:include page="/header"/>
 <body>
 <%
 BookingDao bookingDao = BookingDao.getInstance();
@@ -33,5 +40,5 @@ String phone = request.getParameter("phone");
 </div>
 </section>
 </body>
-<jsp:include page="footer"/>
+<jsp:include page="/footer"/>
 </html>

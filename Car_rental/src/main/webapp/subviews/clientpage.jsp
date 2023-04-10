@@ -15,7 +15,7 @@
 <title>Renter Car</title>
 <link rel="stylesheet" href="/resorces/grid.css">
 </head>
-<jsp:include page="header" />
+<jsp:include page="/header" />
 <body>
 	<%
 	Client client = (Client) session.getAttribute("client");
@@ -86,5 +86,5 @@
 		</table>
 	</section>
 </body>
-<jsp:include page="footer" />
+<jsp:include page="/footer" />
 </html>

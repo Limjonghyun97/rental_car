@@ -8,9 +8,6 @@ import java.util.ArrayList;
 
 import board.Board;
 import board.BoardDto;
-import client.Client;
-import client.ClientDto;
-import client.controller.ClientDao;
 import util.DBManager;
 
 public class BoardDao {
@@ -86,4 +83,27 @@ public class BoardDao {
 
 		return list;
 	}
+	
+	// update
+		public void updateBoard(BoardDto boardDto) {
+			this.conn = DBManager.getConnectionFromMySQL();
+			if(this.conn != null) {
+				String sql = "UPDATE board SET post_no=?, client_id=?, title=?, info=?, join_date=? WHERE post_no=?";
+				try {
+					this.pstmt = this.conn.prepareStatement(sql);
+					
+					this.pstmt.setInt(1, boardDto.getPostNo());
+					this.pstmt.setString(2, boardDto.getClientId());
+					this.pstmt.setString(3, boardDto.getTitle());
+					this.pstmt.setString(4, boardDto.getInfo());
+					this.pstmt.setString(5, boardDto.getJoindate());
+					this.pstmt.setInt(6, boardDto.getPostNo());
+					
+					this.pstmt.execute();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+		}
 }

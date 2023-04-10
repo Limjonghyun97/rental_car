@@ -17,36 +17,40 @@
 	Client client = (Client) session.getAttribute("client");
 	BoardDao boardDao = BoardDao.getInstance();
 	ArrayList<Board> list = boardDao.getBoardAll();
-	
-	int no = 0;
-	for(Board boardInfo : list){
-		no = boardInfo.getPostNo();
-	}
+	int postno = Integer.parseInt(request.getParameter("postNo"));
 	%>
 
 	<section>
-		<h2>글쓰기</h2>
-		<form method="POST" action="../service" class="write">
-			<input type="hidden" name="command" value="write">
+		<h2>수정하기</h2>
+		<form method="POST" action="../service">
+		<input type="hidden" name="command" value="correction">
 			<table>
+				<%
+				for (Board boardInfo : list) {
+					if (boardInfo.getPostNo() == postno) {
+				%>
 				<tr>
-					<td>글번호(자동생성)</td>
-					<td><input type="text" name="no" value="<%=no + 1 %>" readonly></td>
+					<td>글번호</td>
+					<td><input type="text" value="<%=boardInfo.getPostNo()%>" name="postno" readonly></td>
 				</tr>
 				<tr>
 					<td>제목</td>
-					<td><input type="text" name="title" required></td>
+					<td><input type="text" value="<%=boardInfo.getTitle()%>" name="title"></td>
 				</tr>
 				<tr>
 					<td>작성자</td>
-					<td><input type="text" name="clientId" value="<%=client.getId()%>" readonly></td>
+					<td><input type="text" value="<%=boardInfo.getClientId()%>" name="clientId" readonly></td>
 				</tr>
 				<tr>
 					<td>본문</td>
-					<td><textarea name="body" rows="15" cols="40" required></textarea></td>
+					<td><textarea name="body" rows="15" cols="40"><%=boardInfo.getInfo()%></textarea></td>
 				</tr>
+				<%
+				}
+				}
+				%>
 			</table>
-			<input type="submit" value="작성완료">
+			<input type="submit" value="수정하기">
 		</form>
 	</section>
 </body>

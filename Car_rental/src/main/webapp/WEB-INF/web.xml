@@ -112,6 +112,26 @@
   	</servlet-mapping>
   	
   	<servlet>
+  		<servlet-name>correction</servlet-name>
+  		<jsp-file>/subviews/correction.jsp</jsp-file>
+  	</servlet>
+  	
+  	<servlet-mapping>
+  		<servlet-name>correction</servlet-name>
+  		<url-pattern>/correction</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>reservationPage</servlet-name>
+  		<jsp-file>/subviews/reservationPage.jsp</jsp-file>
+  	</servlet>
+  	
+  	<servlet-mapping>
+  		<servlet-name>reservationPage</servlet-name>
+  		<url-pattern>/reservationPage</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
   		<servlet-name>header</servlet-name>
   		<jsp-file>/views/header.jsp</jsp-file>
   	</servlet>

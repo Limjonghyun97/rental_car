@@ -23,7 +23,9 @@
 
 	//Timestamp to String
 	String currentTimestampToString = sdf.format(System.currentTimeMillis());
-
+	
+	String vehicleId = request.getParameter("vehicleId");
+	
 	VehicleDao vehicleDao = VehicleDao.getInstance();
 	ArrayList<Vehicle> list = vehicleDao.getVehicleAll();
 
@@ -32,42 +34,21 @@
 	%>
 
 	<section>
-		<h2>차량조회</h2>
-		<div class="rs_part">
-			<form method="POST" action="search">
-				<input type="datetime-local" name="rental_date" value="<%=currentTimestampToString%>" /> 
-					<input type="text" name="location" placeholder="장소를 입력해주세요." required /> 
-					<input type="submit" value="검색" />
-				<table border=1 class="reservationList">
-					<thead>
-						<tr>
-							<th>차량 종류</th>
-							<th>차량 번호*</th>
-							<th>시간당 비용</th>
-							<th>지역</th>
-						</tr>
-					</thead>
-					<tbody>
-
-						<%
-							for (Vehicle vehicleInfo : list) {
-							%>
-						<tr>
-							<td><%=vehicleInfo.getName()%></td>
-							<td><a href="reservationPage?vehicleId=<%=vehicleInfo.getVehicleId() %>"><%=vehicleInfo.getVehicleId()%></a></td>
-							<td><%=vehicleInfo.getHourRate()%>원</td>
-							<%
-							for (Venue venueInfo : list2) {
-							%>
-							<td><%=venueInfo.getName()%></td>
-						</tr>
-						<%
-							}}
-							%>
-					</tbody>
-				</table>
-			</form>
+		<h2>차량예약</h2>
+		<form method="POST" action="">
+		<div class="reservationInfo">
+			<%for(Vehicle vehicleInfo : list) { 
+				if(vehicleId.equals(vehicleInfo.getVehicleId())){
+			%>
+			<img class="reservationImg" src="../resorces/img/<%=vehicleInfo.getName() %>.jpg" alt="차량이미지">
+			<h3><%=vehicleInfo.getName() %></h3>
+			<p><%=vehicleInfo.getVehicleId() %></p>
+			<p><%=vehicleInfo.getHourRate() %>원(시간당 가격)
+			</p>
+			<%}} %>
+			<input type="submit" value="예약하기">
 		</div>
+		</form>
 	</section>
 	<script></script>
 </body>

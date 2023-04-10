@@ -7,7 +7,7 @@
 <title>Renter Car</title>
 <link rel="stylesheet" href="/resorces/grid.css">
 </head>
-<jsp:include page="header" />
+<jsp:include page="/header" />
 <body>
 	<section>
 		<h2>Renter Car</h2>
@@ -22,5 +22,5 @@
 		</div>
 	</section>
 </body>
-<jsp:include page="footer" />
+<jsp:include page="/footer" />
 </html>

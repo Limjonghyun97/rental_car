@@ -115,6 +115,26 @@ textarea {
 	text-align:center;
 }
 
+/* 차량예약 */
+
+.reservationList {
+	width:400px;
+	text-align:center;
+}
+
+.reservationInfo {
+	margin-top: 30px;
+	display:flex;
+	flex-direction: column;
+	align-items:center;
+	gap:10px;
+}
+
+.reservationImg {
+	width:500px;
+	height:300px;
+}
+
 /* footer */
 footer {
 	background-color:black;

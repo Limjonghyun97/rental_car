@@ -11,7 +11,7 @@
 <title>Renter Car</title>
 <link rel="stylesheet" href="/resorces/grid.css">
 </head>
-<jsp:include page="header" />
+<jsp:include page="/header" />
 <body>
 <%
 	Client client = (Client) session.getAttribute("client");
@@ -44,7 +44,7 @@
 		%>
 		<tr>
 			<td><%=boardInfo.getPostNo() %></td>
-			<td><%=boardInfo.getTitle() %></td>
+			<td><a href="writePage?postNo=<%=boardInfo.getPostNo()%>"><%=boardInfo.getTitle() %></a></td>
 			<td><%=boardInfo.getClientId() %></td>
 			<td><%=boardInfo.getJoindate() %></td>
 		</tr>
@@ -53,5 +53,5 @@
 		</table>
 	</section>
 </body>
-<jsp:include page="footer" />
+<jsp:include page="/footer" />
 </html>

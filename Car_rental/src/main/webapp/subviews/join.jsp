@@ -7,7 +7,7 @@
 <title>Renter Car</title>
 <link rel="stylesheet" href="/resorces/grid.css">
 </head>
-<jsp:include page="header"/>
+<jsp:include page="/header"/>
 <body>
 <section>
 <h2>회원가입</h2>
@@ -31,5 +31,5 @@
 </form>
 </section>
 </body>
-<jsp:include page="footer"/>
+<jsp:include page="/footer"/>
 </html>
